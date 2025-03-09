@@ -1,0 +1,29 @@
+{
+    "pages": [
+      "pages/index/index",
+      "pages/upload/upload",
+      "pages/chat/chat",
+      "pages/history/history"
+    ],
+    "window": {
+      "backgroundTextStyle": "light",
+      "navigationBarBackgroundColor": "#fff",
+      "navigationBarTitleText": "错题助手",
+      "navigationBarTextStyle": "black",
+      "enablePullDownRefresh": true
+    },
+    "tabBar": {
+      "color": "#999999",
+      "selectedColor": "#1296db",
+      "list": [
+        {
+          "pagePath": "pages/index/index",
+          "text": "首页"
+        },
+        {
+          "pagePath": "pages/history/history",
+          "text": "历史"
+        }
+      ]
+    }
+  }

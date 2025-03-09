@@ -1,0 +1,25 @@
+<!--pages/upload/upload.wxml-->
+<view class="container">
+  <!-- 上传区域 -->
+  <view class="upload-area" bindtap="chooseImage">
+    <view class="upload-hint" wx:if="{{!tempImagePath}}">
+      <text class="hint-text">点击上传错题图片</text>
+      <text class="sub-hint">支持拍照或从相册选择</text>
+    </view>
+    <image wx:if="{{tempImagePath}}" 
+           src="{{tempImagePath}}" 
+           mode="aspectFit" 
+           class="preview-image">
+    </image>
+  </view>
+
+  <!-- 按钮区域 -->
+  <view class="button-group">
+    <button class="btn primary" 
+            bindtap="chooseImage" 
+            wx:if="{{!tempImagePath}}">选择图片</button>
+    <button class="btn secondary" 
+            bindtap="resetImage" 
+            wx:if="{{tempImagePath}}">重新选择</button>
+  </view>
+</view>

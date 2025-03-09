@@ -1,0 +1,30 @@
+<!--pages/history/history.wxml-->
+<view class="container">
+  <!-- 历史记录列表 -->
+  <view class="history-list">
+    <view class="history-item" 
+          wx:for="{{historyList}}" 
+          wx:key="id" 
+          bindtap="viewDetail" 
+          data-id="{{item.id}}">
+      
+      <view class="item-header">
+        <text class="date">{{item.date}}</text>
+      </view>
+      
+      <view class="item-content">
+        <image class="thumbnail" src="{{item.imagePath}}" mode="aspectFill"></image>
+        <view class="info">
+          <text class="title">错题解析</text>
+          <text class="summary">点击查看详情</text>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 空状态显示 -->
+  <view class="empty-state" wx:if="{{historyList.length === 0}}">
+    <text>暂无历史记录</text>
+    <navigator url="/pages/upload/upload" class="upload-btn">上传错题</navigator>
+  </view>
+</view>

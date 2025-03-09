@@ -1,0 +1,26 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="header">
+    <text class="title">错题助手</text>
+    <text class="subtitle">AI智能解题，快速提升</text>
+  </view>
+  
+  <view class="button-group">
+    <!-- 修改这里的导航方式 -->
+    <view class="btn primary" bindtap="goToUpload">
+      上传错题
+    </view>
+    
+    <view class="btn secondary" bindtap="goToHistory">
+      历史记录
+    </view>
+  </view>
+
+  <view class="intro">
+    <text class="intro-title">使用说明</text>
+    <view class="intro-item">1. 拍照上传孩子的错题</view>
+    <view class="intro-item">2. AI智能分析并讲解</view>
+    <view class="intro-item">3. 自动生成相似题目练习</view>
+    <view class="intro-item">4. 查看历史记录复习巩固</view>
+  </view>
+</view>

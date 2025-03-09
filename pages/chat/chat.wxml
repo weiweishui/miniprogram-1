@@ -1,0 +1,38 @@
+<!--pages/chat/chat.wxml-->
+<view class="container">
+  <!-- 错题图片区域 -->
+  <view class="image-section">
+    <image wx:if="{{questionData.imagePath}}" 
+           src="{{questionData.imagePath}}" 
+           mode="aspectFit" 
+           class="question-image">
+    </image>
+  </view>
+
+  <!-- 对话区域 -->
+  <scroll-view scroll-y class="chat-section" scroll-into-view="{{lastMessageId}}" scroll-with-animation>
+    <block wx:for="{{messages}}" wx:key="id">
+      <view id="msg-{{item.id}}" class="message {{item.type}}">
+        <view class="message-content">{{item.content}}</view>
+      </view>
+    </block>
+  </scroll-view>
+
+  <!-- 底部操作区 -->
+  <view class="bottom-section">
+    <!-- 输入区域 -->
+    <view class="input-section">
+      <input class="input" 
+             placeholder="请输入您的问题" 
+             value="{{inputValue}}"
+             bindinput="onInput"
+             bindconfirm="sendMessage"/>
+      <button class="send-btn" bindtap="sendMessage">发送</button>
+    </view>
+
+    <!-- 功能按钮 -->
+    <view class="function-section">
+      <button class="function-btn" bindtap="generateExercises">生成练习题</button>
+    </view>
+  </view>
+</view>
